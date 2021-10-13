@@ -1,0 +1,64 @@
+@main("Hello") {
+<section id="content">
+    <div class="wrapper doc">
+        <article>
+            <h1 style="color: green;">HR Management [ CRUD ]</h1>
+
+            <ul>
+                <li><a href="/empList" target="_parent"><button>Employee List</button></a> </li>
+            </ul>
+
+            <h3>.</h3>
+
+            <h4 style="color: green;">You can add employee here! <inline style="color: indianred;"> [ Create ]</inline></h4>
+            <form action="@routes.HomeController.createEmp()" method="post">
+                <input name="name" type="text" placeholder="Name">
+                <input name="sex", type="text" placeholder="sex = M or F">
+                <input name="team" type="text" placeholder="team">
+                <button>Submit</button>
+            </form>
+
+            <h3>.</h3>
+
+            <h4 style="color: green;">Search the employee! <inline style="color: indianred;"> [ Read ]</inline></h4>
+            <form action="getEmp" method="get">
+                <input name="name" type="text" placeholder="Search by Name">
+                <button>Search!</button>
+            </form>
+
+            <h3>.</h3>
+
+            <h4 style="color: green;">You can update employee's information here!<inlne style="color: indianred;"> [ Update ]</inlne> </h4>
+            <form action="@routes.HomeController.updateEmp()" method="post">
+                <input name="Older_Name" type="text" placeholder="Older Name">
+                <input name="name" type="text" placeholder="New Name">
+                <input name="sex", type="text" placeholder="sex = M or F">
+                <input name="team" type="text" placeholder="team">
+                <button>Update!</button>
+            </form>
+
+            <h3>.</h3>
+
+
+            <h4 style="color: green;">You can remove employee from here! <inline style="color: indianred;"> [ Delete ]</inline></h4>
+            <form action="@routes.HomeController.removeEmp()" method="post">
+                <input name="name" type="text" placeholder="Candidate's Name!">
+                <button>Delete!</button>
+            </form>
+
+            <h3>.</h3>
+
+            <h4 style="color: green;">Search the employee by Id!</h4>
+            <h5 style="color: red; font-weight: bold;">Warning: feature is Under Development !</h5>
+            <form action="getEmpById" method="get">
+                <input name="id" type="text" placeholder="Search by Id">
+                <button>Submit</button>
+            </form>
+
+        </article>
+        <aside>
+            @commonSidebar()
+        </aside>
+    </div>
+</section>
+}
